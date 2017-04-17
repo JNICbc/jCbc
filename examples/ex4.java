@@ -39,7 +39,7 @@ jCbc.readLp(solver0,"model1.lp");
 SWIGTYPE_p_CbcModel Model0 = jCbc.new_jCbcModel();
 jCbc.assignSolver(Model0,solver0);
 
-jCbc.par_solve(Model0,solver0,"4 solve_2 solve_3 solve_whs callCbc -solve",names,values,k);
+jCbc.par_solve(Model0,solver0,"3 solve_2 solve_3 solve_whs",names,values,k);
 
 System.out.println("ObjVal = " + jCbc.getObjValue(Model0)); 
 jCbc.delete_jCbcModel(Model0);
