@@ -30,7 +30,7 @@ jCbc.addCol(modelObject,lower[0],upper[0],objValue[0],"x1",true);
 jCbc.addCol(modelObject,lower[1],upper[1],objValue[1],"x2",false);
 jCbc.addCol(modelObject,lower[2],upper[2],objValue[2],"x3",true);
 
-// this defines a swig type integer array of length 3 
+// this defines a swig type integer array of length 2 
 SWIGTYPE_p_int row1Index = jCbc.new_jarray_int(2);	
 // set the values of this array
 jCbc.jarray_int_setitem(row1Index,0,0);          
