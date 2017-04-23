@@ -15,10 +15,25 @@ jCbc.readLp(solver,"model.lp");
 SWIGTYPE_p_CbcModel Model = jCbc.new_jCbcModel();
 jCbc.assignSolver(Model,solver); 
 
+
+double time_total;
+double time1;
+double time2;
+
+
+time_total=0;
+time1 = System.currentTimeMillis();
 jCbc.solve_2(Model,solver,0);
+time2 = System.currentTimeMillis() - time1;
+time_total+= time2;
+
+
+
+System.out.println("\nSolution and computation time without warm starting:");
+System.out.println("Objective_Value=" + jCbc.getObjValue(Model)); 
+System.out.println("Total_time="+time_total+"\n");
 
 int numIntVars = jCbc.getNumIntegers(solver);
-System.out.println("Objective_Value=" + jCbc.getObjValue(Model)); 
 SWIGTYPE_p_std__string names = jCbc.new_jarray_string(numIntVars); 
 SWIGTYPE_p_int values = jCbc.new_jarray_int(numIntVars); 
 SWIGTYPE_p_double sol= jCbc.getColSolution(solver);
@@ -38,23 +53,23 @@ jCbc.readLp(solver1,"model1.lp");
 SWIGTYPE_p_CbcModel Model1 = jCbc.new_jCbcModel();
 jCbc.assignSolver(Model1,solver1); 
 
-double time_total=0;
-double time1 = System.currentTimeMillis();
+time_total=0;
+time1 = System.currentTimeMillis();
 jCbc.solve_whs(Model1,solver1,names,values,k,0);
-double time2 = System.currentTimeMillis() - time1;
+time2 = System.currentTimeMillis() - time1;
 time_total+= time2;
 
 SWIGTYPE_p_double sol1= jCbc.getColSolution(solver1);
 int nCols = jCbc.getNumCols(solver1);
 
-
-System.out.println("Solution:"); 
+System.out.println("\nSolution and computation time without warm starting:");
 System.out.println("Objective_Value=" + jCbc.getObjValue(Model1)); 
+System.out.println("Total_time="+time_total);
+
 
 jCbc.delete_jCbcModel(Model1);
 jCbc.delete_jarray_int(values);
 jCbc.delete_jarray_string(names);
 
-System.out.println("Total_time="+time_total);
 
 }}
