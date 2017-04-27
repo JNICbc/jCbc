@@ -6,6 +6,8 @@ jCbc is a Java Native Interface for COIN OR Mixed Integer Linear Programming Sol
 
 The MILP can be either constructed using the relavant functions in jCbc, or it can be loaded from an LP or MPS file. In either case, jCbc uses branch and cut algorithm to find an optimal solution or declares that the problem has no solution. 
 
+![equation](http://www.sciweavers.org/tex2img.php?eq=1%2Bsin%28mc%5E2%29&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=)
+
 
 *********************************************************************************
 License 
