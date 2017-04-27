@@ -62,7 +62,7 @@ time_total+= time2;
 SWIGTYPE_p_double sol1= jCbc.getColSolution(solver1);
 int nCols = jCbc.getNumCols(solver1);
 
-System.out.println("\nSolution and computation time without warm starting:");
+System.out.println("\nSolution and computation time with warm starting:");
 System.out.println("Objective_Value=" + jCbc.getObjValue(Model1)); 
 System.out.println("Total_time="+time_total);
 
